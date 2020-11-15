@@ -1,0 +1,6 @@
+applicationType: cli
+defaultPackage: tech.garymyers.web
+testFramework: spock
+sourceLanguage: kotlin
+buildTool: gradle
+features: [annotation-api, app-name, graalvm, gradle, kotlin, kotlin-extension-functions, logback, picocli, picocli-kotlin-application, picocli-spock, properties, readme, shade, spock]
