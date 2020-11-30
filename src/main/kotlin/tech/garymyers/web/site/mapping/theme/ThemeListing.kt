@@ -1,4 +1,4 @@
-package tech.garymyers.web.site.theme
+package tech.garymyers.web.site.mapping.theme
 
 import org.eclipse.collections.api.factory.Maps
 import java.nio.file.Path

@@ -6,6 +6,7 @@ import picocli.CommandLine.Command
 import picocli.CommandLine.Parameters
 import tech.garymyers.web.ExitStatus.HT_DOCS_NOT_FOUND
 import tech.garymyers.web.ExitStatus.SUCCESS
+import tech.garymyers.web.site.mapping.MappingService
 import tech.garymyers.web.site.markdown.MarkdownRenderer
 import java.nio.file.Files
 import java.nio.file.Path
@@ -24,12 +25,13 @@ class StaticSiteGenCommand : Callable<ExitStatus> {
    private var htdocs: String = "./"
 
    @ReflectiveAccess @Inject private lateinit var markdownRenderer: MarkdownRenderer
+   @ReflectiveAccess @Inject private lateinit var mappingService: MappingService
 
    override fun call(): ExitStatus {
       val htDocsPath = Path.of(htdocs)
 
-      return if (Files.exists(htDocsPath)) {
-         markdownRenderer.render(htDocsPath)
+      return if (Files.exists(htDocsPath) && Files.isDirectory(htDocsPath)) {
+         mappingService.map(htDocsPath)
          SUCCESS
       } else {
          HT_DOCS_NOT_FOUND
