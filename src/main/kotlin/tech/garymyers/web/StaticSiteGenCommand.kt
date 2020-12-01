@@ -31,7 +31,8 @@ class StaticSiteGenCommand : Callable<ExitStatus> {
       val htDocsPath = Path.of(htdocs)
 
       return if (Files.exists(htDocsPath) && Files.isDirectory(htDocsPath)) {
-         mappingService.map(htDocsPath)
+         println(mappingService.map(htDocsPath))
+
          SUCCESS
       } else {
          HT_DOCS_NOT_FOUND

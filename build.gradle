@@ -47,9 +47,7 @@ dependencies {
    implementation("com.atlassian.commonmark:commonmark-ext-ins:0.15.2")
    implementation("com.atlassian.commonmark:commonmark-ext-yaml-front-matter:0.15.2")
 
-   implementation("org.apache.commons:commons-configuration2:2.7") { transitive = false }
-   runtime("commons-beanutils:commons-beanutils:1.9.4")
-   runtime("org.apache.commons:commons-text:1.9")
+   implementation("commons-io:commons-io:2.8.0")
    implementation("org.eclipse.collections:eclipse-collections-api:10.4.0")
    implementation("org.eclipse.collections:eclipse-collections:10.4.0")
 }
